@@ -23,6 +23,7 @@
             android:layout_width="226dp"
             android:layout_height="20dp"
             android:layout_weight="1"
+            android:bufferType="editable"
             android:clickable="false"
             android:ems="10"
             android:fontFamily="@font/thesusu"
@@ -30,7 +31,8 @@
             android:hint="CAD"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:imeOptions="actionSearch" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -46,13 +48,15 @@
             android:layout_width="226dp"
             android:layout_height="20dp"
             android:layout_weight="1"
+            android:bufferType="editable"
             android:ems="10"
             android:fontFamily="@font/thesusu"
             android:gravity="center"
             android:hint="WON"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:imeOptions="actionSearch" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -68,13 +72,15 @@
             android:layout_width="226dp"
             android:layout_height="20dp"
             android:layout_weight="1"
+            android:bufferType="editable"
             android:ems="10"
             android:fontFamily="@font/thesusu"
             android:gravity="center"
             android:hint="USD"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:imeOptions="actionSearch" />
 
     </LinearLayout>
 
