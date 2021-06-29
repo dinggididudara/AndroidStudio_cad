@@ -1,0 +1,10 @@
+com/example/cadtowonorusd/BuildConfig.java
+ com.example.cadtowonorusd.BuildConfig
+com/example/cadtowonorusd/MainActivity.java
+ com.example.cadtowonorusd.MainActivity
+ com.example.cadtowonorusd.MainActivity$1
+ com.example.cadtowonorusd.MainActivity$2
+ com.example.cadtowonorusd.MainActivity$3
+ com.example.cadtowonorusd.MainActivity$4
+ com.example.cadtowonorusd.MainActivity$5
+ com.example.cadtowonorusd.MainActivity$JsoupAsyncTask
