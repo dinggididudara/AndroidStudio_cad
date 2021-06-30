@@ -1,21 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculateButton"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/square"
+        android:fontFamily="@font/thesusu"
+        android:text="계산하기!"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clearButton"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="107dp"
+        android:background="@drawable/square"
+        android:fontFamily="@font/thesusu"
+        android:text="Clear"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateButton" />
+
     <LinearLayout
-        android:id="@+id/currencymain"
-        android:layout_width="226dp"
+        android:id="@+id/name"
+        android:layout_width="90dp"
         android:layout_height="350dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="197dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintBottom_toTopOf="@+id/ad"
+        app:layout_constraintEnd_toStartOf="@+id/main"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/c"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/square" />
+
+        <ImageView
+            android:id="@+id/arrow3"
+            android:layout_width="30dp"
+            android:layout_height="5dp"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/exchange" />
+
+        <ImageView
+            android:id="@+id/w"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/arrow4"
+            android:layout_width="30dp"
+            android:layout_height="5dp"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/exchange" />
+
+        <ImageView
+            android:id="@+id/u"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/square2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="226dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
@@ -29,13 +121,13 @@
             android:fontFamily="@font/thesusu"
             android:gravity="center"
             android:hint="CAD"
+            android:imeOptions="actionSend"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="18sp"
-            tools:imeOptions="actionSearch" />
+            android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/arrow1"
             android:layout_width="30dp"
             android:layout_height="5dp"
             android:layout_weight="1"
@@ -53,13 +145,13 @@
             android:fontFamily="@font/thesusu"
             android:gravity="center"
             android:hint="WON"
+            android:imeOptions="actionSend"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="18sp"
-            tools:imeOptions="actionSearch" />
+            android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/arrow2"
             android:layout_width="30dp"
             android:layout_height="5dp"
             android:layout_weight="1"
@@ -77,6 +169,7 @@
             android:fontFamily="@font/thesusu"
             android:gravity="center"
             android:hint="USD"
+            android:imeOptions="actionSend"
             android:inputType="number"
             android:selectAllOnFocus="true"
             android:textSize="18sp"
@@ -88,12 +181,12 @@
         android:id="@+id/maintitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/thesusu"
         android:text="환율 계산기!"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,56 +198,24 @@
         android:layout_marginLeft="266dp"
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="88dp"
         android:fontFamily="@font/thesusu"
         android:text="by dinggididudara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="52dp"
-        android:alpha="0.8"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad"
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cadwonusdtransnocloud" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/clearButton"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/square"
-        android:fontFamily="@font/thesusu"
-        android:text="Clear"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculate" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/calculate"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="34dp"
-        android:background="@drawable/square"
-        android:fontFamily="@font/thesusu"
-        android:text="계산하기!"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currencymain" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
