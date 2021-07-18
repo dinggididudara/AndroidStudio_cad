@@ -6,6 +6,9 @@ package com.example.cadtowonorusd;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView c;
     ImageView u;
-    ImageView w;
 
     String cadFromWebsite2;
     String usdFromWebsite2;//태그가 애매해서 하나 더 declare 해야함
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     double wonDoubleType;
     double usdDoubleType;//string 으로 전환한 값 double 로 넣기
 
-    static DecimalFormat df = new DecimalFormat("###,###,###,###,###.##");
+    static DecimalFormat df = new DecimalFormat("###,###,###,###,###.##"); //formatter for money
 
     Document cadDoc;
     Document usdDoc;
@@ -72,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /**
-        * adView initialize and set
+         * Google banner advertisement
+         * - adView initialize and set
          */
         AdView ad;
         MobileAds.initialize(this, new OnInitializationCompleteListener(){
@@ -86,42 +90,111 @@ public class MainActivity extends AppCompatActivity {
         AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
         adView.setAdUnitId("\n" + "ca-app-pub-3940256099942544/6300978111");//test id, change later
+        /////////adview end
 
         imeCad = findViewById(R.id.cadTextView);
         imeUsd = findViewById(R.id.usdTextView);
         imeWon = findViewById(R.id.wonTextView);
 
-//        c = findViewById(R.id.c);
-//        u = findViewById(R.id.u);
-//
-//        /**
-//         * click image 'cad' -> show the currency today
-//         * click image 'usd' -> show the currency today
-//         */
-//        c.setOnClickListener(new OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                new JsoupAsyncTask2().execute() ;
-//                Toast.makeText(getApplicationContext(), String.valueOf(cadFromWebsite2DoubleType), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        u.setOnClickListener(new OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                new JsoupAsyncTask2().execute();
-//                Toast.makeText(getApplicationContext(), String.valueOf(usdFromWebsite2DoubleType), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        c = findViewById(R.id.c);
+        u = findViewById(R.id.u);
 
+        /**
+         * click image 'cad' -> show the currency today (Toast)
+         * click image 'usd' -> show the currency today (Toast)
+         */
+        c.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                new JsoupAsyncTask();
+                Toast t = Toast.makeText(getApplicationContext(), String.valueOf(cadFromWebsite2DoubleType) + " $C", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.TOP | Gravity.LEFT, 139,450);
+                t.show();
+            }
+        });
+        u.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                new JsoupAsyncTask();
+                Toast t = Toast.makeText(getApplicationContext(), String.valueOf(usdFromWebsite2DoubleType) + " $U", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.TOP | Gravity.LEFT, 139, 1500);
+                t.show();
+            }
+        });
         /**
          * click calculate button -> Jsoup execute
          */
-        for(;;) {
         calculate = (Button) findViewById(R.id.calculateButton);
-        calculate.setOnClickListener(new View.OnClickListener() {//click calculate button
+        calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new JsoupAsyncTask().execute();
+
+                imeCad.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        new ifCadEntered();
+                    }
+                });
+                imeWon.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        new ifWonEntered();
+                    }
+                });
+
+                imeUsd.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        new ifUsdEntered();
+                    }
+                });
+//                switch (actionId) { //if cad entered, won entered, usd entered
+//                    case R.id.cadTextView:
+//                        new ifCadEntered();
+//                        break;
+//                    case R.id.wonTextView:
+//                        new ifWonEntered();
+//                        break;
+//                    case R.id.usdTextView:
+//                        new ifUsdEntered();
+//                        break;
+//                    default:
+//                        Toast t = Toast.makeText(getApplicationContext(), "아무 값이나 입력하세요!", Toast.LENGTH_SHORT);
+//                        t.setGravity(Gravity.CENTER_VERTICAL, 0, 400);
+//                        t.show();
+//                        break;
+//                }//click calculate button
             }
         });//calculate button onClick end
         /**
@@ -139,62 +212,42 @@ public class MainActivity extends AppCompatActivity {
         /**
          * click keyboard enter -> click calculate button
          */
-
-            imeCad.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new JsoupAsyncTask().execute();
+        imeCad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEND) { //click keyboard enter
+                    new JsoupAsyncTask();
                     new ifCadEntered();
+                     return true;
                 }
-            });
-            imeCad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                @Override
-                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                    if (actionId == EditorInfo.IME_ACTION_SEND) {
-                        calculate.callOnClick();
-                        return true;
-                    }
-                    return false;
-                }
-            });
-            imeUsd.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new JsoupAsyncTask().execute();
+                return false;
+            }
+        });
+        imeUsd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEND) { //click keyboard enter
+                    new JsoupAsyncTask();
                     new ifUsdEntered();
+                    return true;
                 }
-            });
-            imeUsd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                @Override
-                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                    if (actionId == EditorInfo.IME_ACTION_SEND) {
-                        calculate.callOnClick();
-                        return true;
-                    }
-                    return false;
-                }
-            });
-            imeWon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new JsoupAsyncTask().execute();
-                    new ifWonEntered();
-                }
-            });
-            imeWon.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                @Override
-                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                    if (actionId == EditorInfo.IME_ACTION_SEND) {
-                        calculate.callOnClick();
-                        return true;
-                    }
-                    return false;
-                }
-            });
-        }
+                return false;
+            }
+        });
+        imeWon.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+           @Override
+           public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+              if (actionId == EditorInfo.IME_ACTION_SEND) { //click keyboard enter
+                  new JsoupAsyncTask();
+                  new ifWonEntered();
+                  return true;
+              }
+              return false;
+           }
+        });
     }//onCreate end
     /**
-     *
+     * JsoupAsyncTask -> parsing website
      *
      */
      public class JsoupAsyncTask extends AsyncTask<Double, String[], Double[]> {//parsing from website
@@ -206,17 +259,21 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
         }
-
+        /**
+         *
+         * @param resultArr : double type array
+         * @return resultArr : currency from website (cad and usd)
+         */
         @Override
         protected Double[] doInBackground(Double... resultArr) {
             try {
                 resultArr = new Double[2];
-                cadDoc = Jsoup.connect(cad).get();//website 에서 숫자 가져오기(cad)
+                cadDoc = Jsoup.connect(cad).get();               //website 에서 숫자 가져오기(cad)
                 cadFromWebsiteElement = cadDoc.select(".tbl_calculator td").get(0);
                 cadFromWebsite2=cadFromWebsiteElement.text().replaceAll(",", "");
                 cadFromWebsite2DoubleType = parseDouble(cadFromWebsite2.trim());
 
-                usdDoc = Jsoup.connect(usd).get();//website 에서 숫자 가져오기 (usd)
+                usdDoc = Jsoup.connect(usd).get();              //website 에서 숫자 가져오기 (usd)
                 usdFromWebsiteElement = usdDoc.select(".tbl_calculator td").get(0);
                 usdFromWebsite2=usdFromWebsiteElement.text().replaceAll(",", "");
                 usdFromWebsite2DoubleType = parseDouble(usdFromWebsite2.trim());
@@ -224,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 resultArr[0] = cadFromWebsite2DoubleType;
                 resultArr[1] = usdFromWebsite2DoubleType;
 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return resultArr;
@@ -232,9 +289,11 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Double[] resultArr){
             super.onPostExecute(resultArr);
         }
-    }
+    } //JsoupAsyncTask end
     public class ifCadEntered extends JsoupAsyncTask {
          ifCadEntered(){
+             imeWon.setText(null);
+             imeUsd.setText(null);
              beforeCadTextViewDoubleType = imeCad.getText().toString();//textview 에서 값 가져오기
              cadDoubleType = Double.parseDouble(beforeCadTextViewDoubleType); //가져온 값을 double type 으로 바꿔주기
 
@@ -243,32 +302,36 @@ public class MainActivity extends AppCompatActivity {
 
 
              imeWon.setText(df.format(calculatedWon) + " ₩");
-             imeUsd.setText(df.format(calculatedUsd) + " $");
+             imeUsd.setText(df.format(calculatedUsd) + " $U");
          }
     }
     public class ifWonEntered extends JsoupAsyncTask {
         ifWonEntered(){
+            imeCad.setText(null);
+            imeUsd.setText(null);
             beforeWonTextViewDoubleType = imeWon.getText().toString();//textview 에서 값 가져오기
             wonDoubleType = Double.parseDouble(beforeWonTextViewDoubleType); //가져온 값을 double type 으로 바꿔주기
 
             calculatedCad = Math.round(wonDoubleType / cadFromWebsite2DoubleType * 100) / 100.00; //계산하기
             calculatedUsd = Math.round(wonDoubleType / usdFromWebsite2DoubleType * 100) / 100.00;
 
-            imeCad.setText(df.format(calculatedCad) + " ₩");
-            imeUsd.setText(df.format(calculatedUsd) + " $");
+            imeCad.setText(df.format(calculatedCad) + " $C");
+            imeUsd.setText(df.format(calculatedUsd) + " $U");
 
         }
     }
     public class ifUsdEntered extends JsoupAsyncTask {
         ifUsdEntered(){
+            imeCad.setText(null);
+            imeWon.setText(null);
             beforeUsdTextViewDoubleType = imeUsd.getText().toString(); //textview 에서 값 가져오기
             usdDoubleType = Double.parseDouble(beforeUsdTextViewDoubleType); //가져온 값을 double type 으로 바꿔주기
 
             calculatedCad = Math.round(usdDoubleType / cadDoubleType * 100) / 100.00; //계산하기
             calculatedWon = Math.round(usdDoubleType * cadFromWebsite2DoubleType / usdFromWebsite2DoubleType * 100) / 100.00;
 
-            imeWon.setText(df.format(calculatedWon));
-            imeCad.setText(df.format(calculatedUsd));
+            imeWon.setText(df.format(calculatedWon) + " ₩");
+            imeCad.setText(df.format(calculatedUsd) + " $U");
         }
     }
 }

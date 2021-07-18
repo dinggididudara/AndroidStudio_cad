@@ -6,11 +6,13 @@ com/example/cadtowonorusd/MainActivity.java
  com.example.cadtowonorusd.MainActivity$2
  com.example.cadtowonorusd.MainActivity$3
  com.example.cadtowonorusd.MainActivity$4
+ com.example.cadtowonorusd.MainActivity$4$1
+ com.example.cadtowonorusd.MainActivity$4$2
+ com.example.cadtowonorusd.MainActivity$4$3
  com.example.cadtowonorusd.MainActivity$5
  com.example.cadtowonorusd.MainActivity$6
  com.example.cadtowonorusd.MainActivity$7
  com.example.cadtowonorusd.MainActivity$8
- com.example.cadtowonorusd.MainActivity$9
  com.example.cadtowonorusd.MainActivity$JsoupAsyncTask
  com.example.cadtowonorusd.MainActivity$ifCadEntered
  com.example.cadtowonorusd.MainActivity$ifUsdEntered

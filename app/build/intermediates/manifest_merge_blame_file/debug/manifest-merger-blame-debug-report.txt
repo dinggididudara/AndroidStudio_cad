@@ -66,34 +66,34 @@
 40-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:388-420
 41        android:networkSecurityConfig="@xml/network_security_config"
 41-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:241-301
-42        android:roundIcon="@mipmap/ic_launcher_round"
-42-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:429-474
+42        android:roundIcon="@mipmap/ic_launcher_foreground"
+42-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:429-479
 43        android:supportsRtl="true"
-43-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:483-509
+43-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:488-514
 44        android:testOnly="true"
 45        android:theme="@style/Theme.CADtoWONorUSD"
-45-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:518-560
+45-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:523-565
 46        android:usesCleartextTraffic="true" >
-46-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:569-604
+46-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:13:574-609
 47        <meta-data
-47-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:615-70
+47-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:620-70
 48            android:name="com.google.android.gms.ads.APPLICATION_ID"
-48-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:638-694
+48-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:643-699
 49            android:value="ca-app-pub-5624531041743764~4054873770" />
-49-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:707-761
+49-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:17:712-766
 50
 51        <activity android:name="com.example.cadtowonorusd.MainActivity" >
-51-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:19:774-26:19
-51-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:19:784-812
+51-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:19:779-26:19
+51-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:19:789-817
 52            <intent-filter>
-52-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:21:827-25:28
+52-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:21:832-25:28
 53                <action android:name="android.intent.action.MAIN" />
-53-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:22:859-68
-53-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:22:867-908
+53-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:22:864-68
+53-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:22:872-913
 54
 55                <category android:name="android.intent.category.LAUNCHER" />
-55-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:24:929-75
-55-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:24:939-986
+55-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:24:934-75
+55-->C:\OneDrive\APP\CADtoWONorUSD\app\src\main\AndroidManifest.xml:24:944-991
 56            </intent-filter>
 57        </activity>
 58        <activity
