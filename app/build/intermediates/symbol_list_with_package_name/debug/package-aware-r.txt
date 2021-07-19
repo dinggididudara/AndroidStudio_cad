@@ -1,4 +1,4 @@
-com.example.cadtowonorusd
+com.Can_Won_Usd.app
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1640,7 +1640,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
-drawable background
+drawable backgroundfive
+drawable backgroundtwo
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1650,7 +1651,9 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable buttonbrown
+drawable buttonbrowngreen
 drawable buttongrey
+drawable buttonpink
 drawable cadwonusdtrans
 drawable cadwonusdtransnocloud
 drawable canada
@@ -1661,10 +1664,6 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable exchange
-drawable export
-drawable export_1
-drawable export_4
-drawable export_5
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1673,7 +1672,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable left_arrow
+drawable imagebuttonbrownselector
+drawable imagebuttongreyselector
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1706,13 +1706,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable setting
-drawable settingblue
-drawable settingpink
 drawable signature
 drawable southkorea
-drawable square
-drawable square2
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1789,7 +1784,6 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
-id ad
 id add
 id alertTitle
 id aligned
@@ -1807,6 +1801,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id background
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1820,10 +1815,11 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id buttonslinear
 id c
 id cache_measures
+id cadCalculate
 id cadTextView
-id calculateButton
 id cancel_button
 id center
 id center_horizontal
@@ -1941,6 +1937,7 @@ id leftToRight
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
 id main
@@ -2144,6 +2141,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id usdCalculate
 id usdTextView
 id useLogo
 id view_offset_helper
@@ -2151,6 +2149,7 @@ id visible
 id w
 id withText
 id withinBounds
+id wonCalculate
 id wonTextView
 id wrap
 id wrap_content

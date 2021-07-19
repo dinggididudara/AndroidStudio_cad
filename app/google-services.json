@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767726457853",
+    "project_id": "cad-won-usd",
+    "storage_bucket": "cad-won-usd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767726457853:android:f35276920c54ccaf4b7f94",
+        "android_client_info": {
+          "package_name": "com.example.cadtowonorusd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767726457853-mqlagop73copm56u2u0g7r6vbv6m0kva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC30_ZkJlvk0hTepoaV1K2yedfpVlYnMLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767726457853-mqlagop73copm56u2u0g7r6vbv6m0kva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

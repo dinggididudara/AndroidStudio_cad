@@ -1,10 +1,10 @@
-#Sun Jul 18 01:35:10 EDT 2021
+#Mon Jul 19 03:12:02 EDT 2021
 path.3=classes2.dex
-path.2=8/classes.dex
+path.2=11/classes.dex
 path.1=0/classes.dex
 path.0=classes.dex
 base.3=C\:\\OneDrive\\APP\\CADtoWONorUSD\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=C\:\\OneDrive\\APP\\CADtoWONorUSD\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.2=C\:\\OneDrive\\APP\\CADtoWONorUSD\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
 base.1=C\:\\OneDrive\\APP\\CADtoWONorUSD\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.0=C\:\\OneDrive\\APP\\CADtoWONorUSD\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex

@@ -5,44 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.7"
-        android:background="@drawable/background"
-        android:hapticFeedbackEnabled="false"
+        android:background="@drawable/backgroundfive"
+        android:gravity="fill"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    </RelativeLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/calculateButton"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="11dp"
-        android:background="@drawable/buttongrey"
-        android:fontFamily="@font/thesusu"
-        android:text="계산하기!"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/clearButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main" />
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/clearButton"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="180dp"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="175dp"
         android:background="@drawable/buttonbrown"
         android:fontFamily="@font/thesusu"
         android:text="Clear"
@@ -51,18 +36,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/main" />
 
     <LinearLayout
         android:id="@+id/name"
         android:layout_width="90dp"
         android:layout_height="250dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="45dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -120,9 +105,9 @@
         android:layout_width="226dp"
         android:layout_height="250dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -136,7 +121,7 @@
             android:layout_height="5dp"
             android:layout_weight="1"
             android:bufferType="editable"
-            android:clickable="false"
+            android:clickable="true"
             android:ems="10"
             android:fontFamily="@font/thesusu"
             android:gravity="center"
@@ -144,7 +129,8 @@
             android:imeOptions="actionSend"
             android:inputType="number"
             android:selectAllOnFocus="true"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:selectAllOnFocus="true" />
 
         <ImageView
             android:id="@+id/arrow1"
@@ -161,6 +147,7 @@
             android:layout_height="5dp"
             android:layout_weight="1"
             android:bufferType="editable"
+            android:clickable="true"
             android:ems="10"
             android:fontFamily="@font/thesusu"
             android:gravity="center"
@@ -185,6 +172,7 @@
             android:layout_height="5dp"
             android:layout_weight="1"
             android:bufferType="editable"
+            android:clickable="true"
             android:ems="10"
             android:fontFamily="@font/thesusu"
             android:gravity="center"
@@ -201,13 +189,13 @@
         android:id="@+id/maintitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="57dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
         android:alpha="0.8"
         android:fontFamily="@font/godob"
         android:text="$CAD : \u005cWON : $USD"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/main"
         app:layout_constraintEnd_toEndOf="parent"
@@ -215,24 +203,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ad"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_height="38dp"
         android:layout_marginStart="262dp"
         android:layout_marginLeft="262dp"
         android:layout_marginTop="52dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -247,15 +225,87 @@
             android:layout_height="20dp"
             android:fontFamily="@font/thesusu"
             android:gravity="right"
-            android:text="Currency from 하나은행   " />
+            android:text="Currency from 하나은행   "
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/copyright"
             android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_height="15dp"
             android:fontFamily="@font/thesusu"
             android:gravity="right"
-            android:text="by dinggididudara    " />
+            android:text="copyright @ dinggididudara    "
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonslinear"
+        android:layout_width="55dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cadCalculate"
+            android:layout_width="53dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:background="@drawable/buttonbrowngreen"
+            android:fontFamily="@font/godob"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:text="CAD"
+            android:textColor="#000000"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/wonCalculate"
+            android:layout_width="53dp"
+            android:layout_height="48dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.6"
+            android:background="@drawable/buttonpink"
+            android:fontFamily="@font/godob"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:text="WON"
+            android:textColor="#000000"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/usdCalculate"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0.6"
+            android:background="@drawable/buttongrey"
+            android:fontFamily="@font/godob"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:text="USD"
+            android:textColor="#000000"
+            android:textSize="10dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

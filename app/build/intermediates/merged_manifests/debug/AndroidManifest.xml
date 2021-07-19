@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cadtowonorusd"
+    package="com.Cad_Won_Usd.cadtowonorusd"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -48,7 +48,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5624531041743764~4054873770" />
 
-        <activity android:name="com.example.cadtowonorusd.MainActivity" >
+        <activity android:name="com.Can_Won_Usd.app.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -66,7 +66,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="com.example.cadtowonorusd.mobileadsinitprovider"
+            android:authorities="com.Cad_Won_Usd.cadtowonorusd.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -81,7 +81,7 @@
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="com.example.cadtowonorusd.workmanager-init"
+            android:authorities="com.Cad_Won_Usd.cadtowonorusd.workmanager-init"
             android:directBootAware="false"
             android:exported="false"
             android:multiprocess="true" />

@@ -1,19 +1,17 @@
-com/example/cadtowonorusd/BuildConfig.java
- com.example.cadtowonorusd.BuildConfig
-com/example/cadtowonorusd/MainActivity.java
- com.example.cadtowonorusd.MainActivity
- com.example.cadtowonorusd.MainActivity$1
- com.example.cadtowonorusd.MainActivity$2
- com.example.cadtowonorusd.MainActivity$3
- com.example.cadtowonorusd.MainActivity$4
- com.example.cadtowonorusd.MainActivity$4$1
- com.example.cadtowonorusd.MainActivity$4$2
- com.example.cadtowonorusd.MainActivity$4$3
- com.example.cadtowonorusd.MainActivity$5
- com.example.cadtowonorusd.MainActivity$6
- com.example.cadtowonorusd.MainActivity$7
- com.example.cadtowonorusd.MainActivity$8
- com.example.cadtowonorusd.MainActivity$JsoupAsyncTask
- com.example.cadtowonorusd.MainActivity$ifCadEntered
- com.example.cadtowonorusd.MainActivity$ifUsdEntered
- com.example.cadtowonorusd.MainActivity$ifWonEntered
+com/Can_Won_Usd/app/MainActivity.java
+ com.Can_Won_Usd.app.MainActivity
+ com.Can_Won_Usd.app.MainActivity$1
+ com.Can_Won_Usd.app.MainActivity$2
+ com.Can_Won_Usd.app.MainActivity$3
+ com.Can_Won_Usd.app.MainActivity$4
+ com.Can_Won_Usd.app.MainActivity$5
+ com.Can_Won_Usd.app.MainActivity$6
+ com.Can_Won_Usd.app.MainActivity$7
+ com.Can_Won_Usd.app.MainActivity$8
+ com.Can_Won_Usd.app.MainActivity$9
+ com.Can_Won_Usd.app.MainActivity$JsoupAsyncTask
+ com.Can_Won_Usd.app.MainActivity$ifCadEntered
+ com.Can_Won_Usd.app.MainActivity$ifUsdEntered
+ com.Can_Won_Usd.app.MainActivity$ifWonEntered
+com/Can_Won_Usd/app/BuildConfig.java
+ com.Can_Won_Usd.app.BuildConfig
